@@ -1,0 +1,389 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: black;
+  font-family: 'Oxygen', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+.app {
+  height: 100%;
+  /*&__fondo-overlay{
+        width: 100%;
+        min-height: 800px;
+        background: black;
+        opacity: 0.40;
+        //z-index: -1;
+    }*/
+}
+
+.app__banner {
+  height: 100vh;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app__full-Screen-Video-Wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app__full-Screen-Video-Wrap video {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.app__vid-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 1;
+  opacity: 0.40;
+}
+
+.app__header {
+  position: fixed;
+  width: 100%;
+  margin-bottom: 8%;
+  padding: 1% 5%;
+  z-index: 3;
+}
+
+.app__header, .app__logo, .app__header-ppal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.app__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1em;
+}
+
+.app__barra {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.app__link {
+  font-size: 95%;
+  margin-left: 1.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.app__link-logo {
+  font-size: 100%;
+  margin-left: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+.app__link:hover {
+  color: #e62d74;
+}
+
+.app__modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 4;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.app__contenido {
+  background-color: #fefefe;
+  position: relative;
+  border-radius: 15px;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 600px;
+  /* Could be more or less, depending on screen size */
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 800px;
+  /* Could be more or less, depending on screen size */
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.app__close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.app__close:hover, .app__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.app__video {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 1080px;
+          flex: 1 1 1080px;
+  height: 100vh;
+}
+
+.app__promo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 5%;
+  margin-top: 150px;
+  height: 65%;
+  z-index: 2;
+}
+
+.app__titulo1, .app__titulo2 {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+.app__titulo2 {
+  margin-bottom: 50px;
+}
+
+.app__contendor-boton {
+  font-size: 20px;
+  color: white;
+  background-color: #37AB4A;
+  width: 150px;
+  height: 60px;
+  border: none;
+  border-radius: 50px;
+}
+
+.app__boton {
+  text-decoration: none;
+}
+
+.app__contendor-boton:hover {
+  background-color: white;
+  color: #37AB4A;
+}
+
+.app__body {
+  margin: 0;
+}
+
+.app__anuncio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 5%;
+}
+
+.app__package {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 570px;
+  margin: 10px 0;
+  opacity: 100;
+}
+
+.app__titulo-pack {
+  font-size: 25px;
+  margin: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.app__imgPack {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 350px;
+}
+
+.app__lugar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.app #separador {
+  width: 80%;
+}
+
+.app__descripPack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 0;
+  background-color: white;
+  padding-bottom: 30px;
+}
+
+.app__info {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+.app__package-boton {
+  text-decoration: none;
+}
+
+.app__pack-boton-cont {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: white;
+  font-size: 20px;
+  color: white;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(blue), to(#72aff5));
+  background-image: linear-gradient(to bottom right, blue, #72aff5);
+  width: 150px;
+  height: 60px;
+  border-radius: 50px;
+}
+
+.app__parallax {
+  background-image: url(/imagenes/fondoMartin.jpg);
+  background-color: white;
+  width: 100%;
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/*# sourceMappingURL=main.css.map */

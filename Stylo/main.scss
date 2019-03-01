@@ -1,0 +1,304 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100%;
+    background-color: black;
+    font-family: 'Oxygen', sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+.app{
+    height: 100%;
+
+    &__banner{
+        height: 100vh;
+        margin: 0;
+        //width: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__container{
+        //max-width: 960px;
+        //padding-left: 1rem;
+        //padding-right: 1rem;
+        //margin: 0 5%;
+    }
+
+    &__full-Screen-Video-Wrap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    &__full-Screen-Video-Wrap video{
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+    &__vid-overlay{
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: black;
+        z-index: 1;
+        opacity: 0.40;
+    }
+
+    &__header{
+        //margin: 0 5%;
+        position: fixed;
+        width: 100%;
+        margin-bottom: 8%;
+        padding: 1% 5%;
+        z-index: 3;
+    }
+
+    &__header, &__logo, &__header-ppal{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 1em;
+    }
+
+    &__barra{
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__link{
+        font-size: 95%;
+        margin-left: 1.5em;
+        color: white;
+        text-decoration: none;
+    }
+
+    &__link-logo{
+        font-size: 100%;
+        margin-left: 5px;
+        color: white;
+        text-decoration: none;
+    }
+
+    &__link:hover{
+        color: rgb(230, 45, 116);
+    }
+
+    &__modal{
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 4; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    &__contenido{
+        background-color: #fefefe;
+        position: relative;
+        border-radius: 15px;
+        margin: 15% auto; /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 600px; /* Could be more or less, depending on screen size */
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        height: 800px; /* Could be more or less, depending on screen size */
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+    }
+
+    @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 0; opacity: 1}
+    }
+
+    &__close{
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    &__close:hover, &__close:focus{
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &__video{
+        //background-size: cover;
+        //background-repeat: no-repeat;
+        //background-position: center;
+        flex: 1 1 1080px;
+        height: 100vh;
+        //height: 973px;
+    }
+
+    &__promo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        //align-items: center;
+        margin: 0 5%;
+        margin-top: 150px;
+        //padding: 1%;
+        height: 65%;
+        z-index: 2;
+    }
+
+    &__titulo1, &__titulo2{
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        margin: 0;
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    &__titulo2{
+        margin-bottom: 50px;
+    }
+
+    &__contendor-boton{
+        font-size: 20px;
+        color: white;
+        background-color: #37AB4A;
+        width: 150px;
+        height: 60px;
+        border: none;
+        border-radius: 50px;
+    }
+
+    &__boton{
+        text-decoration: none;
+    }
+
+    &__contendor-boton:hover{
+        background-color: white;
+        color: #37AB4A;
+    }
+
+    &__body{
+        margin: 0;
+        //padding: 1%;
+    }
+
+    &__anuncio{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin: 0 5%;
+    }
+
+    &__package{
+        display: flex;
+        flex-direction: column;
+        //align-items: center;
+        width: 570px;
+        margin: 10px 0;
+        opacity: 100;
+    }
+
+    &__titulo-pack{
+        font-size: 25px;
+        margin: auto;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &__imgPack{
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 350px;
+    }
+
+    &__lugar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    #separador{
+        width: 80%;
+    }
+
+    &__descripPack{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        background-color: white;
+        padding-bottom: 30px;
+    }
+
+    &__info{
+        margin: 5px 0;
+        font-size: 20px;
+    }
+
+    &__package-boton{
+        text-decoration: none;
+    }
+
+    &__pack-boton-cont{
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        border: white;
+        font-size: 20px;
+        color: white;
+        background-image: linear-gradient(to bottom right, blue, rgb(114, 175, 245));
+        width: 150px;
+        height: 60px;
+        border-radius: 50px;
+    }
+
+    &__parallax{
+        background-image: url(/imagenes/fondoMartin.jpg);
+        background-color: white;
+        width: 100%;
+        min-height: 800px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    /*&__fondo-overlay{
+        width: 100%;
+        min-height: 800px;
+        background: black;
+        opacity: 0.40;
+        //z-index: -1;
+    }*/
+}
